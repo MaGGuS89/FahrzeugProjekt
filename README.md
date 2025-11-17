@@ -12,21 +12,25 @@ Ein Java-Konsolenprojekt zur Simulation verschiedener Fahrzeugtypen mit Tanklogi
   - Tanken (inkl. Überfüllungsschutz)
   - Werkstattprüfung
 - Realistische Tanklogik mit Rundung und Kapazitätsgrenzen
+  
 
 ## 📁 Projektstruktur
 
-src/ 
-└── evb/ 
-  └── marcus/ 
-    └── fahrzeugprojekt/ 
-      ├── Main.java
-      └── fahrzeuge/
-        ├── Fahrzeug.java
-        ├── Auto.java
-        ├── Motorrad.java
-        ├── Lkw.java
-      └── werkstatt/
-        ├── Werkstatt.java
+```
+src/
+└── evb/
+    └── marcus/
+        └── fahrzeugprojekt/
+            ├── Main.java
+            ├── fahrzeuge/
+            │   ├── Fahrzeug.java
+            │   ├── Auto.java
+            │   ├── Motorrad.java
+            │   └── Lkw.java
+            └── werkstatt/
+                └── Werkstatt.java
+```
+
 
 
 ## ▶️ Starten
