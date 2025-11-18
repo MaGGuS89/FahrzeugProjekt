@@ -13,6 +13,7 @@ Ein Java-Konsolenprojekt zur Simulation verschiedener Fahrzeugtypen mit Tanklogi
   - Werkstattprüfung
   - Testfahrt simulieren
 - Realistische Tanklogik mit Rundung und Kapazitätsgrenzen
+- Verbrauchsberechnung pro gefahrener Strecke
   
 
 ## 📁 Projektstruktur
