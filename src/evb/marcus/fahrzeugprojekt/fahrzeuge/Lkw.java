@@ -22,4 +22,15 @@ public class Lkw extends Fahrzeug {
     public void starten() {
         System.out.println("Lkw " + getMarke() + " (BJ " + getBaujahr() + ") startet mit Druckluftsystem.");
     }
+
+    @Override
+    public double getVerbrauch() {
+        return 12.0;
+    }
+
+    @Override
+    public String getAsciiSymbol() {
+        return "   __\n _/[]\\_\n(o -- o)>"; // Platzhalter
+    }
+
 }

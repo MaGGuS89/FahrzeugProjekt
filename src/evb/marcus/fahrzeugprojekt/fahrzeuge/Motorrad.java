@@ -19,4 +19,14 @@ public class Motorrad extends Fahrzeug {
     public void starten() {
         System.out.println("Motorrad " + getMarke() + " (BJ " + getBaujahr() + ") startet mit Kickstart.");
     }
+
+    @Override
+    public double getVerbrauch() {
+        return 4.0;
+    }
+
+    @Override
+    public String getAsciiSymbol() {
+        return "   __\n _/[]\\_\n(o -- o)>"; //Platzhalter
+    }
 }

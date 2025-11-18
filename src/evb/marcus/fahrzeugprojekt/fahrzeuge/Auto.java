@@ -32,4 +32,14 @@ public class Auto extends Fahrzeug {
     public String toString() {
         return super.toString() + " mit " + anzahlTueren + " Türen";
     }
+
+    @Override
+    public double getVerbrauch() {
+        return 7.0;
+    }
+
+    @Override
+    public String getAsciiSymbol() {
+        return "   __\n _/[]\\_\n(o -- o)>";
+    }
 }

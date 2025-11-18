@@ -11,6 +11,8 @@ public abstract class Fahrzeug {
     private final double tankinhaltMax;   // maximales Tankvolumen
     private double tankinhalt;
     private double geschwindigkeit;
+    public abstract double getVerbrauch();
+    public abstract String getAsciiSymbol();
 
     protected Fahrzeug(String marke, int baujahr, double tankinhalt, double tankinhaltMax) {
         this.marke = marke;
@@ -66,6 +68,55 @@ public abstract class Fahrzeug {
         geschwindigkeit += delta;
         System.out.println(getMarke() + " beschleunigt auf " + geschwindigkeit + " km/h.");
     }
+
+    public boolean fahren(double streckeKm) {
+        double verbrauchPro100Km = getVerbrauch();
+        double spritBenoetigt = (verbrauchPro100Km / 100.0) * streckeKm;
+
+        if (spritBenoetigt > tankinhalt) {
+            System.out.println("Nicht genug Kraftstoff für die Strecke!");
+            return false;
+        }
+
+        tankinhalt -= spritBenoetigt;
+        System.out.printf("%.2f km gefahren. %.2f Liter verbraucht.%n", streckeKm, spritBenoetigt);
+        return true;
+    }
+
+    public void simuliereTestfahrt(double km) {
+        System.out.println("Testfahrt gestartet: " + km + " km");
+
+        double verbrauchProKm = getVerbrauch() / 100.0;
+        double tankVorher = tankinhalt;
+
+        for (int i = 1; i <= (int) km; i++) {
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
+            tankinhalt -= verbrauchProKm;
+
+            if (tankinhalt <= 0) {
+                System.out.println("\nTank leer nach " + i + " km!");
+                tankinhalt = 0;
+                return;
+            }
+
+            // ASCII-Symbol zeilenweise einrücken
+            String[] lines = this.getAsciiSymbol().split("\n");
+            StringBuilder shifted = new StringBuilder();
+            for (String line : lines) {
+                shifted.append(" ".repeat(i)).append(line).append("\n");
+            }
+
+            System.out.print("\r" + shifted.toString());
+        }
+
+        System.out.printf("%nTeststrecke erfolgreich gefahren. Verbrauch: %.2f Liter%n", tankVorher - tankinhalt);
+    }
+
 
     public abstract void starten();
 

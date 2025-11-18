@@ -9,7 +9,7 @@ import evb.marcus.fahrzeugprojekt.werkstatt.Werkstatt;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+     static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Willkommen im Werkstatt-Testprogramm!");
@@ -62,6 +62,7 @@ public class Main {
             System.out.println("2 = beschleunigen");
             System.out.println("3 = tanken");
             System.out.println("4 = Werkstattprüfung");
+            System.out.println("5 = Testfahrt simulieren");
             System.out.println("0 = beenden");
             System.out.print("Ihre Wahl: ");
 
@@ -80,6 +81,11 @@ public class Main {
                     fahrzeug.tanken(liter);
                 }
                 case 4 -> werkstatt.pruefeFahrzeug(fahrzeug);
+                case 5 -> {
+                    System.out.print("Geben Sie die Teststrecke in km ein: ");
+                    double km = scanner.nextDouble();
+                    fahrzeug.simuliereTestfahrt(km);
+                }
                 case 0 -> System.out.println("Programm beendet.");
                 default -> System.out.println("Ungültige Eingabe!");
             }
