@@ -11,6 +11,7 @@ Ein Java-Konsolenprojekt zur Simulation verschiedener Fahrzeugtypen mit Tanklogi
   - Beschleunigen
   - Tanken (inkl. Überfüllungsschutz)
   - Werkstattprüfung
+  - Testfahrt simulieren
 - Realistische Tanklogik mit Rundung und Kapazitätsgrenzen
   
 
