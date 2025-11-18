@@ -48,7 +48,7 @@ src/
 
 ## 🛠 Erweiterungsideen (in Arbeit :))
 
-- Verbrauchslogik beim Fahren
+- ~~Verbrauchslogik beim Fahren~~
 - Tankwarnung bei niedrigem Füllstand
 - GUI mit Swing oder JavaFX
 - Speicherung von Fahrzeugen in Datei oder Datenbank
